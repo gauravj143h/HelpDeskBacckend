@@ -100,7 +100,7 @@ public class TicketService {
     }
 
     public List<TicketResponseDTO> getTicketsByassignedTo(long id){
-        List<TicketEntity> tickets = ticketRepo.findByassignedTo(id);
+        List<TicketEntity> tickets = ticketRepo.findByAssignedToId(id);
         List<TicketResponseDTO> dtos = new ArrayList<>();
         for (TicketEntity ticket : tickets) {
             dtos.add(EntityToDto(ticket));
@@ -144,6 +144,7 @@ public class TicketService {
         tc.setDescription(response.getDescription());
         tc.setStatus(response.getStatus());
         tc.setCreatedBy(response.getCreatedBy().getName());
+        tc.setId(response.getId());
         if (response.getAssignedTo() != null) {
             tc.setAssignedBy(response.getAssignedTo().getName());
         }

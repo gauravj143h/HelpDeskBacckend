@@ -15,4 +15,5 @@ public class TicketResponseDTO {
     private TicketPriority priority;
     private String CreatedBy;
     private String AssignedBy;
+    private Long id;
 }

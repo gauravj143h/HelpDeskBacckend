@@ -19,6 +19,6 @@ public interface TicketRepo extends JpaRepository<TicketEntity,Long> {
     List<TicketEntity> findByCreatedById(Long id);
     Page<TicketEntity> findAll(Pageable pageable);
     long countByAssignedToId(Long userId);
-    List<TicketEntity> findByassignedTo(Long id);
+    List<TicketEntity> findByAssignedToId(Long id);
 
 }
